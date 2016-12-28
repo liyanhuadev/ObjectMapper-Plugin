@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FFCE3C751E13872A005C8267 /* ImmutableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCE3C721E13872A005C8267 /* ImmutableTests.swift */; };
+		FFCE3C761E13872A005C8267 /* MutableStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCE3C731E13872A005C8267 /* MutableStruct.swift */; };
+		FFCE3C771E13872A005C8267 /* NestedKeysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCE3C741E13872A005C8267 /* NestedKeysTests.swift */; };
 		FFDD14CA1E136198004FCF92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDD14C91E136198004FCF92 /* AppDelegate.swift */; };
 		FFDD14CC1E136198004FCF92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDD14CB1E136198004FCF92 /* Assets.xcassets */; };
 		FFDD14CF1E136198004FCF92 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFDD14CD1E136198004FCF92 /* MainMenu.xib */; };
@@ -51,6 +54,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FFCE3C721E13872A005C8267 /* ImmutableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImmutableTests.swift; sourceTree = "<group>"; };
+		FFCE3C731E13872A005C8267 /* MutableStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutableStruct.swift; sourceTree = "<group>"; };
+		FFCE3C741E13872A005C8267 /* NestedKeysTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedKeysTests.swift; sourceTree = "<group>"; };
 		FFDD14C61E136198004FCF92 /* ObjectMapper-Plugin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ObjectMapper-Plugin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDD14C91E136198004FCF92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFDD14CB1E136198004FCF92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +126,9 @@
 				FFDD14CB1E136198004FCF92 /* Assets.xcassets */,
 				FFDD14CD1E136198004FCF92 /* MainMenu.xib */,
 				FFDD14D01E136198004FCF92 /* Info.plist */,
+				FFCE3C721E13872A005C8267 /* ImmutableTests.swift */,
+				FFCE3C731E13872A005C8267 /* MutableStruct.swift */,
+				FFCE3C741E13872A005C8267 /* NestedKeysTests.swift */,
 			);
 			path = "ObjectMapper-Plugin";
 			sourceTree = "<group>";
@@ -276,6 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFCE3C761E13872A005C8267 /* MutableStruct.swift in Sources */,
+				FFCE3C751E13872A005C8267 /* ImmutableTests.swift in Sources */,
+				FFCE3C771E13872A005C8267 /* NestedKeysTests.swift in Sources */,
 				FFDD14CA1E136198004FCF92 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +512,7 @@
 				FFDD14D51E136198004FCF92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FFDD14E91E1361D3004FCF92 /* Build configuration list for PBXNativeTarget "ExCommand" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +521,7 @@
 				FFDD14EB1E1361D3004FCF92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
