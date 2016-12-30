@@ -2,6 +2,6 @@
 a xcode plug-in for generating mapping
 
 > mutable
-![](https://github.com/liyanhuadev/ObjectMapper-Plugin/raw/master/images/mutable.gif)
+![](https://github.com/liyanhuadev/ObjectMapper-Plugin/raw/master/images/Mapper-Mutable.gif)
 > immutable
-![](https://github.com/liyanhuadev/ObjectMapper-Plugin/raw/master/images/immutable.gif)
+![](https://github.com/liyanhuadev/ObjectMapper-Plugin/raw/master/images/Mapper-Immutable.gif)
