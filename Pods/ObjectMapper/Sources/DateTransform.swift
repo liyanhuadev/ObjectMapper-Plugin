@@ -1,8 +1,8 @@
 //
-//  NestedKeysTests.swift
+//  DateTransform.swift
 //  ObjectMapper
 //
-//  Created by Syo Ikeda on 3/10/15.
+//  Created by Tristan Himmelman on 2014-10-13.
 //
 //  The MIT License (MIT)
 //
@@ -28,36 +28,28 @@
 
 import Foundation
 
+open class DateTransform: TransformType {
+	public typealias Object = Date
+	public typealias JSON = Double
 
-class Object: Equatable {
-	var value: Int = Int.min
-}
+	public init() {}
 
-func == (lhs: Object, rhs: Object) -> Bool {
-	return lhs.value == rhs.value
-}
+	open func transformFromJSON(_ value: Any?) -> Date? {
+		if let timeInt = value as? Double {
+			return Date(timeIntervalSince1970: TimeInterval(timeInt))
+		}
+		
+		if let timeStr = value as? String {
+			return Date(timeIntervalSince1970: TimeInterval(atof(timeStr)))
+		}
+		
+		return nil
+	}
 
-enum Int64Enum: NSNumber {
-	case a = 0
-	case b = 1000
-}
-
-enum IntEnum: Int {
-	case a = 0
-	case b = 255
-}
-
-enum DoubleEnum: Double {
-	case a = 0.0
-	case b = 100.0
-}
-
-enum FloatEnum: Float {
-	case a = 0.0
-	case b = 100.0
-}
-
-enum StringEnum: String {
-	case A = "String A"
-	case B = "String B"
+	open func transformToJSON(_ value: Date?) -> Double? {
+		if let date = value {
+			return Double(date.timeIntervalSince1970)
+		}
+		return nil
+	}
 }

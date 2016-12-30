@@ -15,7 +15,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        
+        
+//        let path = Bundle.main.url(forResource: "ModelSample", withExtension: nil)!.path
+//        let content = try! String.init(contentsOfFile: path)
+
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
