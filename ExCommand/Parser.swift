@@ -41,7 +41,7 @@ class Parser: NSObject {
                 if let lower: Int = buffer.index(where: { $0.contains(matche.matchedString) }) {
                     if let blockStr = self.firstBlock(in: contentStr, after: matche.range.upperBound) {
                         let model = matche.matchedString + blockStr
-                        let length = model.characters.filter({ char -> Bool in return char == "\n" }).count
+                        let length = model.filter({ char -> Bool in return char == "\n" }).count
                         let upper = lower + length
                         
                         let elements = self.parse(buffer: buffer[Range(lower+1..<upper)].map { $0 })
@@ -73,7 +73,7 @@ class Parser: NSObject {
                     var closure: String = matche.matchedString
                     if let blockStr = self.firstBlock(in: contentStr, after: matche.range.upperBound) {
                         closure += blockStr
-                        let length = closure.characters.filter({ (char) -> Bool in return char == "\n" }).count
+                        let length = closure.filter({ (char) -> Bool in return char == "\n" }).count
                         upper = lower + length
                     }
                     metadatas.append(Metadata.closureProperty(range: Range(lower...upper)))
@@ -102,7 +102,7 @@ class Parser: NSObject {
                             method.append("\n")
                         }
                         method += blockStr
-                        let length = method.characters.filter({ (char) -> Bool in return char == "\n" }).count
+                        let length = method.filter({ (char) -> Bool in return char == "\n" }).count
                         let upper = lower + length
                         metadatas.append(Metadata.method(range: Range(lower...upper)))
                         
@@ -135,7 +135,7 @@ class Parser: NSObject {
     
     func firstBlock(in content: String, after index: String.Index) -> String? {
         
-        let tempStr = content.substring(from: index).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let tempStr = content[index...].trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         guard tempStr.hasPrefix("{") else {
             return nil
         }
@@ -154,7 +154,7 @@ class Parser: NSObject {
             currentIndex = tempStr.index(after: currentIndex)
             
             if closureCount < 1 {
-                blockString = tempStr.substring(to: currentIndex)
+                blockString = String(tempStr[..<currentIndex])
                 break
             }
             
@@ -172,6 +172,6 @@ class Parser: NSObject {
 extension String {
     
     var length: Int {
-        return characters.count
+        return count
     }
 }

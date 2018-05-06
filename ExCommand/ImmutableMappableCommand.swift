@@ -14,7 +14,7 @@ class ImmutableMappableCommand: NSObject, XCSourceEditorCommand {
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
 
         
-        let lines = invocation.buffer.lines.flatMap { "\($0)" }
+        let lines: [String] = invocation.buffer.lines.compactMap { "\($0)" }
         
         var classModelImpl: [(Int, String)] = []
         

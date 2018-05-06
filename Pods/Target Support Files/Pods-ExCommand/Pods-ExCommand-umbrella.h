@@ -10,3 +10,7 @@
 #endif
 #endif
 
+
+FOUNDATION_EXPORT double Pods_ExCommandVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_ExCommandVersionString[];
+
