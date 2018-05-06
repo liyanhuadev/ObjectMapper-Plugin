@@ -327,10 +327,10 @@ public func <- <T: BaseMappable>(left: inout Array<Array<T>>!, right: Map) {
 	}
 }
 
-// MARK:- Set of Mappable objects - Set<T: BaseMappable>
+// MARK:- Set of Mappable objects - Set<T: BaseMappable where T: Hashable>
 
 /// Set of Mappable objects
-public func <- <T: BaseMappable>(left: inout Set<T>, right: Map) {
+public func <- <T: BaseMappable>(left: inout Set<T>, right: Map) where T: Hashable {
 	switch right.mappingType {
 	case .fromJSON where right.isKeyPresent:
 		FromJSON.objectSet(&left, map: right)
@@ -340,7 +340,7 @@ public func <- <T: BaseMappable>(left: inout Set<T>, right: Map) {
 	}
 }
 
-public func >>> <T: BaseMappable>(left: Set<T>, right: Map) {
+public func >>> <T: BaseMappable>(left: Set<T>, right: Map) where T: Hashable {
 	if right.mappingType == .toJSON {
 		ToJSON.objectSet(left, map: right)
 	}
@@ -348,7 +348,7 @@ public func >>> <T: BaseMappable>(left: Set<T>, right: Map) {
 
 
 /// Optional Set of Mappable objects
-public func <- <T: BaseMappable>(left: inout Set<T>?, right: Map) {
+public func <- <T: BaseMappable>(left: inout Set<T>?, right: Map) where T: Hashable, T: Hashable {
 	switch right.mappingType {
 	case .fromJSON where right.isKeyPresent:
 		FromJSON.optionalObjectSet(&left, map: right)
@@ -358,7 +358,7 @@ public func <- <T: BaseMappable>(left: inout Set<T>?, right: Map) {
 	}
 }
 
-public func >>> <T: BaseMappable>(left: Set<T>?, right: Map) {
+public func >>> <T: BaseMappable>(left: Set<T>?, right: Map) where T: Hashable, T: Hashable {
 	if right.mappingType == .toJSON {
 		ToJSON.optionalObjectSet(left, map: right)
 	}
@@ -366,7 +366,7 @@ public func >>> <T: BaseMappable>(left: Set<T>?, right: Map) {
 
 
 /// Implicitly unwrapped Optional Set of Mappable objects
-public func <- <T: BaseMappable>(left: inout Set<T>!, right: Map) {
+public func <- <T: BaseMappable>(left: inout Set<T>!, right: Map) where T: Hashable {
 	switch right.mappingType {
 	case .fromJSON where right.isKeyPresent:
 		FromJSON.optionalObjectSet(&left, map: right)
