@@ -112,9 +112,10 @@ private final class _MatchResult {
 
   private let rangeFromNSRange: (String.UTF16View, NSRange) -> Range<String.UTF16Index>? = { string, range in
     guard range.location != NSNotFound else { return nil }
+    
 #if swift(>=3.0)
-    let start = string.startIndex.advanced(by: range.location)
-    let end = start.advanced(by: range.length)
+    let start = string.index(string.startIndex, offsetBy: range.location)
+    let end = string.index(start, offsetBy: range.length)
 #else
     let start = string.startIndex.advancedBy(range.location)
     let end = start.advancedBy(range.length)
@@ -122,8 +123,9 @@ private final class _MatchResult {
     return start..<end
   }
 
-  private let substringFromRange: (String.UTF16View, Range<String.UTF16Index>) -> String = { string, range in
-    return string[range].description
+  private let substringFromRange: (String.UTF16View, Range<String.UTF16View.Index>) -> String = { string, range in
+    guard let string = String(string[range]) else { return "" }
+    return string
   }
 
 }
