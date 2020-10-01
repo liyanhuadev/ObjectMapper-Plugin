@@ -1,5 +1,5 @@
 # ObjectMapper-Plugin
-a xcode plug-in for generating mapping
+An Xcode plug-in for generating mapping
 
 * 	support `class` and `struct` 
 *  support `Mappable` `ImmutableMappable` auto mapping
