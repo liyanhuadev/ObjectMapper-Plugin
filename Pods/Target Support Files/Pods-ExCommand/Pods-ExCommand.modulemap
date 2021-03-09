@@ -1,6 +1,0 @@
-framework module Pods_ExCommand {
-  umbrella header "Pods-ExCommand-umbrella.h"
-
-  export *
-  module * { export * }
-}
