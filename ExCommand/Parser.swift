@@ -38,13 +38,13 @@ class Parser: NSObject {
             var removeList = [String]()
             for matche in matches {
                 print("Model: \(matche.matchedString)")
-                if let lower: Int = buffer.index(where: { $0.contains(matche.matchedString) }) {
+                if let lower: Int = buffer.firstIndex(where: { $0.contains(matche.matchedString) }) {
                     if let blockStr = self.firstBlock(in: contentStr, after: matche.range.upperBound) {
                         let model = matche.matchedString + blockStr
                         let length = model.filter({ char -> Bool in return char == "\n" }).count
                         let upper = lower + length
                         
-                        let elements = self.parse(buffer: buffer[Range(lower+1..<upper)].map { $0 })
+                        let elements = self.parse(buffer: buffer[lower+1..<upper].map { $0 })
                         metadatas.append(Metadata.model(range: Range(lower...upper), elements: elements))
                         
                         removeList.append(model)
@@ -68,7 +68,7 @@ class Parser: NSObject {
             var removeList = [String]()
             for matche in matches {
                 print("Closure: \(matche.matchedString)")
-                if let lower: Int = buffer.index(where: { $0.contains(matche.matchedString) }) {
+                if let lower: Int = buffer.firstIndex(where: { $0.contains(matche.matchedString) }) {
                     var upper = lower
                     var closure: String = matche.matchedString
                     if let blockStr = self.firstBlock(in: contentStr, after: matche.range.upperBound) {
@@ -94,7 +94,7 @@ class Parser: NSObject {
             for matche in matches {
                 print("Method: \(matche.matchedString)")
                 
-                if let lower: Int = buffer.index(where: { $0.contains(matche.matchedString) }) {
+                if let lower: Int = buffer.firstIndex(where: { $0.contains(matche.matchedString) }) {
                     if let blockStr = self.firstBlock(in: contentStr, after: matche.range.upperBound) {
                         
                         var method = matche.matchedString
@@ -122,7 +122,7 @@ class Parser: NSObject {
             let matches = regex.allMatches(contentStr)
             for matche in matches {
                 print("Variable: \(matche.matchedString)")
-                if let index: Int = buffer.index(where: { $0.contains(matche.matchedString) }) {
+                if let index: Int = buffer.firstIndex(where: { $0.contains(matche.matchedString) }) {
                     contentStr = contentStr.replacingOccurrences(of: buffer[index], with: "")
                     metadatas.append(Metadata.property(lineNumber: index))
                 }
