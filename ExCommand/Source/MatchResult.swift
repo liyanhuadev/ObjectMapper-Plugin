@@ -94,7 +94,7 @@ private final class _MatchResult {
   }
 #endif
 
-  lazy var range: Range<String.UTF16Index> = {
+  lazy var range: Range<String.Index> = {
     return self.rangeFromNSRange(self.string, self.result.range)!
   }()
 
@@ -102,7 +102,7 @@ private final class _MatchResult {
     return self.captureRanges.map { $0.map { self.substringFromRange(self.string, $0) } }
   }()
 
-  lazy var captureRanges: [Range<String.UTF16Index>?] = {
+  lazy var captureRanges: [Range<String.Index>?] = {
     return self.result.ranges.dropFirst().map { self.rangeFromNSRange(self.string, $0) }
   }()
 
@@ -110,7 +110,7 @@ private final class _MatchResult {
     return self.substringFromRange(self.string, self.rangeFromNSRange(self.string, self.result.range)!)
   }()
 
-  private let rangeFromNSRange: (String.UTF16View, NSRange) -> Range<String.UTF16Index>? = { string, range in
+  private let rangeFromNSRange: (String.UTF16View, NSRange) -> Range<String.Index>? = { string, range in
     guard range.location != NSNotFound else { return nil }
     
 #if swift(>=3.0)

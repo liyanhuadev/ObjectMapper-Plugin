@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6DE208300F564A9BB32E26C0 /* Pods_ExCommand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37591400C2E9C488A2A6B652 /* Pods_ExCommand.framework */; };
-		E801FB44FC950D1F1209B46F /* Pods_ObjectMapper_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6B47D546EACF5895A2D719 /* Pods_ObjectMapper_Plugin.framework */; };
+		2BF3E5102746061B00C55D4B /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 2BF3E50F2746061B00C55D4B /* ObjectMapper */; };
+		2BF3E51227460F3D00C55D4B /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF3E51127460F3D00C55D4B /* XcodeKit.framework */; };
+		2BF3E51327460F3D00C55D4B /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF3E51127460F3D00C55D4B /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FF494D9C1E163D29001069FB /* MutableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF494D9B1E163D29001069FB /* MutableModel.swift */; };
 		FF4AC97F1E149FE1000FC377 /* ModelSample in Resources */ = {isa = PBXBuildFile; fileRef = FF4AC97E1E149FE1000FC377 /* ModelSample */; };
 		FF4AC9891E14A4CB000FC377 /* Foundation+Ranges.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4AC9811E14A4CB000FC377 /* Foundation+Ranges.swift */; };
@@ -49,6 +50,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		2BF3E51427460F3D00C55D4B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2BF3E51327460F3D00C55D4B /* XcodeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFDD14EC1E1361D3004FCF92 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,12 +75,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2BF3E51127460F3D00C55D4B /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 		37591400C2E9C488A2A6B652 /* Pods_ExCommand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExCommand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E59747AA604A2874C5C7EA0 /* Pods-ExCommand.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExCommand.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExCommand/Pods-ExCommand.debug.xcconfig"; sourceTree = "<group>"; };
 		6C6B47D546EACF5895A2D719 /* Pods_ObjectMapper_Plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjectMapper_Plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		83F1E92F004FAD06BDF26911 /* Pods-ExCommand.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExCommand.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExCommand/Pods-ExCommand.release.xcconfig"; sourceTree = "<group>"; };
-		863A74675A6DFBA36241254F /* Pods-ObjectMapper-Plugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectMapper-Plugin.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectMapper-Plugin/Pods-ObjectMapper-Plugin.release.xcconfig"; sourceTree = "<group>"; };
-		A6BC7505735AFD6AF05B5E7B /* Pods-ObjectMapper-Plugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectMapper-Plugin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectMapper-Plugin/Pods-ObjectMapper-Plugin.debug.xcconfig"; sourceTree = "<group>"; };
 		FF494D9B1E163D29001069FB /* MutableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutableModel.swift; sourceTree = "<group>"; };
 		FF4AC97E1E149FE1000FC377 /* ModelSample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ModelSample; sourceTree = "<group>"; };
 		FF4AC9811E14A4CB000FC377 /* Foundation+Ranges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Ranges.swift"; sourceTree = "<group>"; };
@@ -109,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E801FB44FC950D1F1209B46F /* Pods_ObjectMapper_Plugin.framework in Frameworks */,
+				2BF3E5102746061B00C55D4B /* ObjectMapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,24 +127,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFDD14DD1E1361D2004FCF92 /* Cocoa.framework in Frameworks */,
-				6DE208300F564A9BB32E26C0 /* Pods_ExCommand.framework in Frameworks */,
+				2BF3E51227460F3D00C55D4B /* XcodeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		254A3B06266F772E50742D11 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A6BC7505735AFD6AF05B5E7B /* Pods-ObjectMapper-Plugin.debug.xcconfig */,
-				863A74675A6DFBA36241254F /* Pods-ObjectMapper-Plugin.release.xcconfig */,
-				5E59747AA604A2874C5C7EA0 /* Pods-ExCommand.debug.xcconfig */,
-				83F1E92F004FAD06BDF26911 /* Pods-ExCommand.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		FF4AC9801E14A4CB000FC377 /* RegexSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +156,6 @@
 				FFDD14DE1E1361D2004FCF92 /* ExCommand */,
 				FFDD14DB1E1361D2004FCF92 /* Frameworks */,
 				FFDD14C71E136198004FCF92 /* Products */,
-				254A3B06266F772E50742D11 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,6 +186,7 @@
 		FFDD14DB1E1361D2004FCF92 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2BF3E51127460F3D00C55D4B /* XcodeKit.framework */,
 				FFDD14DC1E1361D2004FCF92 /* Cocoa.framework */,
 				6C6B47D546EACF5895A2D719 /* Pods_ObjectMapper_Plugin.framework */,
 				37591400C2E9C488A2A6B652 /* Pods_ExCommand.framework */,
@@ -241,12 +239,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFDD14D31E136198004FCF92 /* Build configuration list for PBXNativeTarget "ObjectMapper-Plugin" */;
 			buildPhases = (
-				33B3E052D29008AE9CA2CFA8 /* [CP] Check Pods Manifest.lock */,
 				FFDD14C21E136198004FCF92 /* Sources */,
 				FFDD14C31E136198004FCF92 /* Frameworks */,
 				FFDD14C41E136198004FCF92 /* Resources */,
 				FFDD14EC1E1361D3004FCF92 /* Embed App Extensions */,
-				7C9EC94BC0F6DCCB47F014DD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,6 +250,9 @@
 				FFDD14E71E1361D3004FCF92 /* PBXTargetDependency */,
 			);
 			name = "ObjectMapper-Plugin";
+			packageProductDependencies = (
+				2BF3E50F2746061B00C55D4B /* ObjectMapper */,
+			);
 			productName = "ObjectMapper-Plugin";
 			productReference = FFDD14C61E136198004FCF92 /* ObjectMapper-Plugin.app */;
 			productType = "com.apple.product-type.application";
@@ -262,10 +261,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFDD14E91E1361D3004FCF92 /* Build configuration list for PBXNativeTarget "ExCommand" */;
 			buildPhases = (
-				A8A633206637F2923B68E7D0 /* [CP] Check Pods Manifest.lock */,
 				FFDD14D61E1361D2004FCF92 /* Sources */,
 				FFDD14D71E1361D2004FCF92 /* Frameworks */,
 				FFDD14D81E1361D2004FCF92 /* Resources */,
+				2BF3E51427460F3D00C55D4B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,17 +282,15 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = LyhDev;
 				TargetAttributes = {
 					FFDD14C51E136198004FCF92 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 4GWLHB3KYU;
 						ProvisioningStyle = Automatic;
 					};
 					FFDD14D91E1361D2004FCF92 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 4GWLHB3KYU;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -301,13 +298,16 @@
 			};
 			buildConfigurationList = FFDD14C11E136198004FCF92 /* Build configuration list for PBXProject "ObjectMapper-Plugin" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
 			mainGroup = FFDD14BD1E136198004FCF92;
+			packageReferences = (
+				2BF3E50E2746061B00C55D4B /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+			);
 			productRefGroup = FFDD14C71E136198004FCF92 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -337,63 +337,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		33B3E052D29008AE9CA2CFA8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ObjectMapper-Plugin-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7C9EC94BC0F6DCCB47F014DD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ObjectMapper-Plugin/Pods-ObjectMapper-Plugin-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ObjectMapper-Plugin/Pods-ObjectMapper-Plugin-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A8A633206637F2923B68E7D0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ExCommand-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FFDD14C21E136198004FCF92 /* Sources */ = {
@@ -478,6 +421,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -535,6 +479,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -556,22 +501,26 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
 		FFDD14D41E136198004FCF92 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6BC7505735AFD6AF05B5E7B /* Pods-ObjectMapper-Plugin.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 4GWLHB3KYU;
+				DEVELOPMENT_TEAM = F6L92Q8QNM;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "ObjectMapper-Plugin/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.copycat.ObjectMapper-Plugin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -581,16 +530,19 @@
 		};
 		FFDD14D51E136198004FCF92 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 863A74675A6DFBA36241254F /* Pods-ObjectMapper-Plugin.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 4GWLHB3KYU;
+				DEVELOPMENT_TEAM = F6L92Q8QNM;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "ObjectMapper-Plugin/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.copycat.ObjectMapper-Plugin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -600,16 +552,20 @@
 		};
 		FFDD14EA1E1361D3004FCF92 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E59747AA604A2874C5C7EA0 /* Pods-ExCommand.debug.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ExCommand/ExCommand.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 4GWLHB3KYU;
+				DEVELOPMENT_TEAM = F6L92Q8QNM;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ExCommand/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.copycat.ObjectMapper-Plugin.ExCommand";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -623,16 +579,20 @@
 		};
 		FFDD14EB1E1361D3004FCF92 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83F1E92F004FAD06BDF26911 /* Pods-ExCommand.release.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ExCommand/ExCommand.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4GWLHB3KYU;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ExCommand/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.copycat.ObjectMapper-Plugin.ExCommand";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -674,6 +634,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2BF3E50E2746061B00C55D4B /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:tristanhimmelman/ObjectMapper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2BF3E50F2746061B00C55D4B /* ObjectMapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BF3E50E2746061B00C55D4B /* XCRemoteSwiftPackageReference "ObjectMapper" */;
+			productName = ObjectMapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FFDD14BE1E136198004FCF92 /* Project object */;
 }
